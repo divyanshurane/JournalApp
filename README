@@ -1,0 +1,33 @@
+# JournalApp
+
+A secure, personal journaling backend API built using Spring Boot, JWT authentication, Spring Security, Redis caching, and MongoDB. This app allows users to register, log in, and manage their journal entries with full CRUD functionality.
+
+---
+
+## ✅ Features
+
+- User Registration and Login (JWT-based)
+- Secure endpoints using Spring Security
+- Create, Read, Update, and Delete journal entries
+- Redis caching for performance
+- Role-based access control 
+- Modular and RESTful API design
+- External API integration
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Java 17+
+- Spring Boot
+- Maven
+- MongoDB
+- Redis (optional for local testing, used in prod)
+- IntelliJ IDEA (or any Java IDE)
+
+### Environment Setup
+
+Create a `.env` or set environment variables manually
+
