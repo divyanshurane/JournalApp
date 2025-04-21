@@ -4,19 +4,31 @@ spring:
     port: 14472
     password : ${REDIS_PASS}
   data:
-    mongodb:
+    mongodb:  
       uri: ${MONGODB_URI}
       database: journaldb
       auto-index-creation: true
 
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${OAUTH_CLIENT_ID}
+            client-secret: ${OAUTH_CLIENT_SECRET}
+
+  mvc:
+    static-path-pattern: /**
+  web:
+    resources:
+      add-mappings: true
+
 server:
-  port: ${SERVER_PORT}
+  port: 8081
   servlet :
     context-path : /journal
 
 
 weather :
   api :
-    key : ${WEATHER_API_KEY}
-
-#weather_api_key :
+    key : ${WEATHER_API}

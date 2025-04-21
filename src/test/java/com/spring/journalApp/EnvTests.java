@@ -6,10 +6,15 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AppTests {
+public class EnvTests {
 
-	@Test
-	void contextLoads() {
-	}
 
+    @Value("${DEV_TYPE}")
+    private String devtype;
+
+    @Test
+    @PostConstruct
+    public void testEnv(){
+        System.out.println(devtype);
+    }
 }

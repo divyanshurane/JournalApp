@@ -20,9 +20,9 @@ import java.util.List;
 
 @Document(collection = "users")
 @Data
-@Getter
-@Setter
-@ToString
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @Id
     private ObjectId id;
