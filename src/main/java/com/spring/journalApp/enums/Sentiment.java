@@ -1,7 +1,7 @@
 package com.spring.journalApp.enums;
 
 public enum Sentiment{
-    Happy,
+    HAPPY,
     Sad,
     Anxious,
     Angry,

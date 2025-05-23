@@ -6,6 +6,8 @@ import com.spring.journalApp.entity.User;
 import com.spring.journalApp.repository.UserRepository;
 import com.spring.journalApp.service.UserService;
 import com.spring.journalApp.service.WeatherService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +23,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
+@Tag(name="User Controller",description="Endpoint for all users")
 public class UserController {
 
     @Autowired
@@ -40,9 +43,10 @@ public class UserController {
 //    }
 
     @GetMapping
+    @Operation(summary = "Greets the authoried user ",description = "Greets the authoried user and returns the weather for the selected location")
     public ResponseEntity<?> greeting(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        WeatherResponse weatherResponse = weatherService.getWeather("Mumbai");
+        WeatherResponse weatherResponse = weatherService.getWeather("Pune");
         String greeting = "";
         if(weatherResponse!=null){
             greeting = ",Weather feels like "+weatherResponse.getCurrent().getFeelslike();
@@ -57,6 +61,7 @@ public class UserController {
 //    }
 
     @PutMapping
+    @Operation(summary = "Update the user data by ID",description = "Updates the user data")
     public ResponseEntity<?> updateUserByUsername(@RequestBody User newUser){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
@@ -70,6 +75,7 @@ public class UserController {
     }
 
     @DeleteMapping
+    @Operation(summary = "Delete the user by ID",description = "Deletes the user")
     public ResponseEntity<?> deleteUserByUsername(){
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();

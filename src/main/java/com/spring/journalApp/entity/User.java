@@ -20,9 +20,9 @@ import java.util.List;
 
 @Document(collection = "users")
 @Data
-@Getter
-@Setter
-@ToString
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @Id
     private ObjectId id;
@@ -37,5 +37,4 @@ public class User {
     @DBRef
     private List<JournalEntry> journalEntries = new ArrayList<>();
     private List<String> roles;
-
 }
