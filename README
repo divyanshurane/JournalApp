@@ -6,7 +6,7 @@ A secure, personal journaling backend API built using Spring Boot, JWT authentic
 
 ## ✅ Features
 
-- User Registration and Login (JWT-based)
+- User Registration and Login (Oauth2 & JWT-Based)
 - Secure endpoints using Spring Security
 - Create, Read, Update, and Delete journal entries
 - Redis caching for performance

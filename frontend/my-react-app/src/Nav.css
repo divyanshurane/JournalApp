@@ -1,0 +1,10 @@
+.Navbar{
+    align-items:end;
+    background-color: black;
+}
+.list{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    
+}
